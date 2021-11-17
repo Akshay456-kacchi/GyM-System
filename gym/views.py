@@ -33,7 +33,27 @@ def Index(request):
     if not request.user.is_staff:
         return redirect('login')
 
-    return render(request,'index.html')
+    enquiry =Enquiry.objects.all()    
+    member =Member.objects.all()    
+    plan =Plan.objects.all()    
+    equipment =Equipment.objects.all() 
+    e1 =0   
+    m1 =0   
+    p1 =0   
+    eq1 =0  
+
+    for i in enquiry:
+        e1+=1 
+    for i in member:
+        m1+=1 
+    for i in plan:
+        p1+=1 
+    for i in equipment:
+        eq1+=1 
+
+    d = {'e1':e1,'m1':m1,'p1':p1,'eq1':eq1}    
+
+    return render(request,'index.html',d)
     
 def Logout_admin(request):
     if not request.user.is_staff:

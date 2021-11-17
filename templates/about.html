@@ -1,5 +1,7 @@
 {% extends 'navgition.html' %}
 
+
+{% load static %}
 {% block body %}
 <div class = 'container' style ='margin-top:60px'>
 
@@ -9,7 +11,7 @@
      <div class = "row">
          <div class = "col-sm-4 text-center">
          
-           <img src = "" width ="300px" height ="300px" class = "image-responsive">
+           <img src = "{% static 'images/gym.jpg' %}" width ="300px" height ="300px" class = "image-responsive">
          </div>
          
          <div class = "col-sm-8 text-center">
@@ -19,8 +21,20 @@
          
          
          </div>
-    
+          
     </div>    
 </div>
 
+ <footer class ="text-center">
+ 
+  Copyright &copy; 2021 All Rights Reserved
+ </footer>
 {% endblock %}
+
+
+
+
+
+{% comment %} <class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+<span style="color: red;">FITNESS</span> 
+TANTRA<span class="caret"></span> {% endcomment %}
